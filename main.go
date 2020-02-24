@@ -1,15 +1,22 @@
 package main
 
 import (
-    "fmt"
+    "encoding/json"
     "net/http"
+
+    "go-tostn/structs"
 )
 
 func main() {
     mux := http.NewServeMux()
-    mux.HandleFunc("/gotostn", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Println("request received")
-        w.Write([]byte("Hello world"))
+    mux.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
+       if r.Method == http.MethodGet {
+           data := structs.Response {
+               Code: http.StatusOK,
+               Body: "pong",
+           }
+           json.NewEncoder(w).Encode(data)
+       }
     })
-    http.ListenAndServe("localhost:3000", mux)
+    http.ListenAndServe(":3000", mux)
 }
