@@ -6,7 +6,6 @@ type Response struct {
 }
 
 type PostRequest struct {
-	id int `json:"id"`
 	name string `json:"name"`
 	cpf string `json:"cpf"`
 	balance float64  `json:"balance"`
