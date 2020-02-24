@@ -4,7 +4,7 @@ import (
     "encoding/json"
     "net/http"
 
-    "go-tostn/structs"
+    "go-tostn/views"
 )
 
 func main() {
