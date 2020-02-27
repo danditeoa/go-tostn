@@ -5,9 +5,18 @@ type Response struct {
 	Body interface{} `json:"body"`
 }
 
-type PostRequest struct {
-	name string `json:"name"`
-	cpf string `json:"cpf"`
-	balance float64  `json:"balance"`
-	datetime string `json:"datetime"`
+type Account struct {
+	Id        int
+	Name      string
+	Cpf       string
+	Balance   float64
+	CreatedAt string
+}
+
+type Transfers struct {
+	Id                   int `json:"id"`
+	AccountOriginId      int
+	AccountDestinationId int
+	Amount               float64
+	CreatedAt            string
 }
