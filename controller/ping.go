@@ -2,8 +2,8 @@ package controller
 
 import (
 	"encoding/json"
-	"net/http"
 	"go-tostn/views"
+	"net/http"
 )
 
 func ping() http.HandlerFunc {
