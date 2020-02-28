@@ -14,7 +14,7 @@ type Account struct {
 }
 
 type Transfers struct {
-	Id                   int `json:"id"`
+	Id                   int
 	AccountOriginId      int
 	AccountDestinationId int
 	Amount               float64
