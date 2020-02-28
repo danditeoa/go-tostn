@@ -1,6 +1,8 @@
 package main
 
 import (
+    "fmt"
+    "log"
     "net/http"
 
     "go-tostn/controller"
@@ -8,5 +10,6 @@ import (
 
 func main() {
     mux := controller.Register()
-    http.ListenAndServe(":3000", mux)
+    fmt.Println("Serving...")
+    log.Fatal(http.ListenAndServe(":3000", mux))
 }
